@@ -8,7 +8,7 @@ class SpecificProductDiscount(private val product: Product, private val percenta
     /**
      * Applies the specific product discount to the list of shopping cart items.
      */
-    override fun apply(items: List<ShoppingCartItem>): List<PromotionApplicationResult> {
+    override suspend fun apply(items: List<ShoppingCartItem>): List<PromotionApplicationResult> {
         return calculateDiscount(items)?.let { listOf(it) } ?: emptyList()
     }
 

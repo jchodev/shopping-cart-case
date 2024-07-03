@@ -15,7 +15,7 @@ class ApplyDiscountPromotionHelper {
     /**
      * Applies discount promotions to the shopping cart and returns the cart with the minimum total amount.
      */
-    fun applyDiscountPromotion(
+    suspend fun applyDiscountPromotion(
         shoppingCart: ShoppingCart,
         discountPromotions: List<DiscountPromotion>
     ): ShoppingCart {
@@ -36,7 +36,7 @@ class ApplyDiscountPromotionHelper {
     /**
      * Calculates the shopping cart after applying the given list of discount promotions.
      */
-    private fun calculateShoppingCart(
+    private suspend fun calculateShoppingCart(
         shoppingCart: ShoppingCart,
         discountPromotions: List<DiscountPromotion>
     ): ShoppingCart {

@@ -8,13 +8,17 @@ class BuyGetFreePromotion(
     private val product: Product,
     private val buy: Int,
     private val free: Int,
+    /**
+     * A flag indicating whether this promotion can be applied multiple times to the same shopping cart (default: true).
+     * If set to `false`, the promotion can only be applied once, even if the required categories appear multiple times in the cart.
+     */
     private val repeatable: Boolean = true,
 ) : DiscountPromotion()  {
 
     /**
      * Applies the buy-get-free promotion to the list of shopping cart items.
      */
-    override fun apply(items: List<ShoppingCartItem>): List<PromotionApplicationResult> {
+    override suspend fun apply(items: List<ShoppingCartItem>): List<PromotionApplicationResult> {
         val results = mutableListOf<PromotionApplicationResult>()
         var currentItems = items
 

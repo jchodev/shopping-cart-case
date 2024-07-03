@@ -5,6 +5,6 @@ import com.jerry.testcart_technical_test.models.ShoppingCartItem
 
 
 abstract class DiscountPromotion {
-    abstract fun apply(items : List<ShoppingCartItem>): List<PromotionApplicationResult>
+    abstract suspend fun apply(items : List<ShoppingCartItem>): List<PromotionApplicationResult>
 }
 

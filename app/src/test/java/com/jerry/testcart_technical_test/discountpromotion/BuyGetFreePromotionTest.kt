@@ -4,6 +4,7 @@ import com.jerry.testcart_technical_test.data.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
+import kotlinx.coroutines.test.runTest
 
 //https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=0#gid=0
 class BuyGetFreePromotionTest {
@@ -16,7 +17,7 @@ class BuyGetFreePromotionTest {
     }
 
     @Test
-    fun `test BuyGetFreePromotion contain promotion product, repeatable is false expect return 1 discount promotion applied` (){
+    fun `test BuyGetFreePromotion contain promotion product, repeatable is false expect return 1 discount promotion applied` () = runTest{
         //assign and action
         val actualResult = discountPromotion.apply(
             items = listOf(
@@ -62,7 +63,7 @@ class BuyGetFreePromotionTest {
 
 
     @Test
-    fun `test BuyGetFreePromotion was not contain product and repeatable is false expect return 0 discount promotion applied` (){
+    fun `test BuyGetFreePromotion was not contain product and repeatable is false expect return 0 discount promotion applied` () = runTest{
         //assign and action
         val actualResult = discountPromotion.apply(
             items = listOf(
@@ -78,7 +79,7 @@ class BuyGetFreePromotionTest {
     }
 
     @Test
-    fun `test BuyGetFreePromotion contain promotion product, repeatable is true expect return more than 1 discount promotion applied` (){
+    fun `test BuyGetFreePromotion contain promotion product, repeatable is true expect return more than 1 discount promotion applied` () = runTest{
         discountPromotion = BuyGetFreePromotion(
             product = mockBuyGetFreePromotionProduct,
             buy = mockBuyGetFreePromotionBuy,
@@ -122,7 +123,7 @@ class BuyGetFreePromotionTest {
     }
 
     @Test
-    fun `test BuyGetFreePromotion was not contain product and repeatable is true expect return 0 discount promotion applied` (){
+    fun `test BuyGetFreePromotion was not contain product and repeatable is true expect return 0 discount promotion applied` () = runTest{
         discountPromotion = BuyGetFreePromotion(
             product = mockApple,
             buy = mockBuyGetFreePromotionBuy,
@@ -145,7 +146,7 @@ class BuyGetFreePromotionTest {
     }
 
     @Test
-    fun `test BuyGetFreePromotion with empty product return 0 discount promotion applied` (){
+    fun `test BuyGetFreePromotion with empty product return 0 discount promotion applied` () = runTest{
         discountPromotion = BuyGetFreePromotion(
             product = mockApple,
             buy = mockBuyGetFreePromotionBuy,

@@ -46,9 +46,13 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.0")
 }
 
 // Configure test options for JUnit 5
 tasks.withType<Test> {
     useJUnitPlatform()
+
+    // Set the test executor to use the coroutines test dispatcher
+    systemProperty("kotlinx.coroutines.test.dispatcher", "on")
 }

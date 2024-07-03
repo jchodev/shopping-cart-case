@@ -9,7 +9,7 @@ class GeneralBasketDiscount(private val percentageOff: Double) : DiscountPromoti
     /**
      * Applies the general basket discount to the list of shopping cart items.
      */
-    override fun apply(items: List<ShoppingCartItem>): List<PromotionApplicationResult> {
+    override suspend fun apply(items: List<ShoppingCartItem>): List<PromotionApplicationResult> {
         val result = calculateDiscount(items)
         return result?.let { listOf(it) } ?: emptyList()
     }

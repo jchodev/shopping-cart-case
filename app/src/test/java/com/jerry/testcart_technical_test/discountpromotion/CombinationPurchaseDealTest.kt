@@ -3,6 +3,7 @@ package com.jerry.testcart_technical_test.discountpromotion
 
 import com.jerry.testcart_technical_test.data.*
 import com.jerry.testcart_technical_test.models.*
+import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -18,7 +19,7 @@ class CombinationPurchaseDealTest {
     }
 
     @Test
-    fun `test CombinationPurchaseDeal match deal, Repeatable is false expect return 1 discount promotion applied`() {
+    fun `test CombinationPurchaseDeal match deal, Repeatable is false expect return 1 discount promotion applied`() = runTest{
         val shoppingCartItem = listOf(
             mockShoppingCartItemApple,
             mockShoppingCartItemCoke,
@@ -79,7 +80,7 @@ class CombinationPurchaseDealTest {
     }
 
     @Test
-    fun `test CombinationPurchaseDeal match deal and get cheaper item for counting, Repeatable is false expect return 1 discount promotion applied`() {
+    fun `test CombinationPurchaseDeal match deal and get cheaper item for counting, Repeatable is false expect return 1 discount promotion applied`() = runTest{
         val shoppingCartItem = listOf(
             mockShoppingCartItemApple,
             mockShoppingCartItemCoke,
@@ -122,7 +123,7 @@ class CombinationPurchaseDealTest {
     }
 
     @Test
-    fun `test CombinationPurchaseDeal was not match deal expect return 0 discount promotion applied`() {
+    fun `test CombinationPurchaseDeal was not match deal expect return 0 discount promotion applied`() = runTest{
         //assign and action
         val actualResult = discountPromotion.apply(
             items = listOf(
@@ -140,7 +141,7 @@ class CombinationPurchaseDealTest {
     }
 
     @Test
-    fun `test CombinationPurchaseDeal with empty shopping item return 0 discount promotion applied`() {
+    fun `test CombinationPurchaseDeal with empty shopping item return 0 discount promotion applied`() = runTest{
         //assign and action
         val actualResult = discountPromotion.apply(
             items = listOf()
@@ -154,7 +155,7 @@ class CombinationPurchaseDealTest {
     }
 
     @Test
-    fun `test CombinationPurchaseDeal match deal, Repeatable is true expect return count of discount promotion larger than 1`() {
+    fun `test CombinationPurchaseDeal match deal, Repeatable is true expect return count of discount promotion larger than 1`() = runTest{
         discountPromotion = CombinationPurchaseDeal(
             dealPrice = mockMealDealPrice,
             mealDealCategories = mockMealDeal,
@@ -187,7 +188,7 @@ class CombinationPurchaseDealTest {
     }
 
     @Test
-    fun `test CombinationPurchaseDeal was match with two different product with same category`() {
+    fun `test CombinationPurchaseDeal was match with two different product with same category`() = runTest{
 
         val mockMealDealCategoryFood = MealDealCategory(mockCategoryFood, 2)
         val mockMealDealCategoryFruit = MealDealCategory(mockCategoryFruit, 1)
@@ -264,7 +265,7 @@ class CombinationPurchaseDealTest {
     }
 
     @Test
-    fun `test CombinationPurchaseDeal have not enough item to fulfill this meal deal will return 0 applied`() {
+    fun `test CombinationPurchaseDeal have not enough item to fulfill this meal deal will return 0 applied`() = runTest{
 
         val mockMealDealCategoryFood = MealDealCategory(mockCategoryFood, 3)
         val mockMealDealCategoryFruit = MealDealCategory(mockCategoryFruit, 1)

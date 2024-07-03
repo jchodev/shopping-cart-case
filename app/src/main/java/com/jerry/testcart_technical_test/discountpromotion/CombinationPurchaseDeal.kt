@@ -6,13 +6,17 @@ import com.jerry.testcart_technical_test.models.*
 //A combination purchase deal (eg buy 1 sandwich and 1 apple and 1 drink for £X price)
 class CombinationPurchaseDeal(private val mealDealCategories: List<MealDealCategory>,
                               private val dealPrice: Double,
+                              /**
+                               * A flag indicating whether this promotion can be applied multiple times to the same shopping cart (default: true).
+                               * If set to `false`, the promotion can only be applied once, even if the required categories appear multiple times in the cart.
+                               */
                               private val repeatable: Boolean = true,
 ): DiscountPromotion() {
 
     /**
      * Applies the combination purchase deal promotion to the list of shopping cart items.
      */
-    override fun apply(items: List<ShoppingCartItem>): List<PromotionApplicationResult> {
+    override suspend fun apply(items: List<ShoppingCartItem>): List<PromotionApplicationResult> {
         val results = mutableListOf<PromotionApplicationResult>()
         var currentItems = items
 

@@ -1,6 +1,7 @@
 package com.jerry.testcart_technical_test.discountpromotion
 
 import com.jerry.testcart_technical_test.data.*
+import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -15,7 +16,7 @@ class GeneralBasketDiscountTest {
     }
 
     @Test
-    fun `test GeneralBasketDiscount with product expect return 1 discount promotion applied`(){
+    fun `test GeneralBasketDiscount with product expect return 1 discount promotion applied`()= runTest{
 
         val shoppingCartList = listOf(
             mockShoppingCartItemApple,
@@ -54,7 +55,7 @@ class GeneralBasketDiscountTest {
     }
 
     @Test
-    fun `test GeneralBasketDiscount with Empty item expect return 0 discount promotion applied`(){
+    fun `test GeneralBasketDiscount with Empty item expect return 0 discount promotion applied`()= runTest{
 
         //assign and action
         val actualResult = discountPromotion.apply(

@@ -3,6 +3,7 @@ package com.jerry.testcart_technical_test.helper
 import com.jerry.testcart_technical_test.data.*
 import com.jerry.testcart_technical_test.discountpromotion.*
 import com.jerry.testcart_technical_test.models.*
+import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -33,7 +34,7 @@ class ApplyDiscountPromotionHelperTest {
 
 
     @Test
-    fun `test ApplyDiscountPromotionHelper apply SpecificProductDiscount only with match case return expected result`() {
+    fun `test ApplyDiscountPromotionHelper apply SpecificProductDiscount only with match case return expected result`() = runTest {
 
         //assign and action
         val actualResult = helper.applyDiscountPromotion(
@@ -69,9 +70,9 @@ class ApplyDiscountPromotionHelperTest {
     }
 
     @Test
-    fun `test ApplyDiscountPromotionHelper apply SpecificProductDiscount only without match case return expected result`() {
+    fun `test ApplyDiscountPromotionHelper apply SpecificProductDiscount only without match case return expected result`() = runTest {
 
-        //assign and action
+    //assign and action
         val actualResult = helper.applyDiscountPromotion(
             shoppingCart = ShoppingCart(
                 items = listOf(
@@ -97,9 +98,9 @@ class ApplyDiscountPromotionHelperTest {
     }
 
     @Test
-    fun `test ApplyDiscountPromotionHelper apply BuyGetFreePromotion only with match case return expected result`() {
+    fun `test ApplyDiscountPromotionHelper apply BuyGetFreePromotion only with match case return expected result`() = runTest {
 
-        //assign and action
+    //assign and action
         val actualResult = helper.applyDiscountPromotion(
             shoppingCart = mockShoppingCart,
             discountPromotions = listOf(
@@ -145,8 +146,8 @@ class ApplyDiscountPromotionHelperTest {
     }
 
     @Test
-    fun `test ApplyDiscountPromotionHelper apply BuyGetFreePromotion only without match case return expected result`() {
-        //assign and action
+    fun `test ApplyDiscountPromotionHelper apply BuyGetFreePromotion only without match case return expected result`() = runTest {
+    //assign and action
         val actualResult = helper.applyDiscountPromotion(
             shoppingCart = ShoppingCart(
                 items = listOf(
@@ -171,8 +172,8 @@ class ApplyDiscountPromotionHelperTest {
     }
 
     @Test
-    fun `test ApplyDiscountPromotionHelper apply Multi promotion or discount match case return expected best price result`() {
-        //assign and action
+    fun `test ApplyDiscountPromotionHelper apply Multi promotion or discount match case return expected best price result`() = runTest {
+    //assign and action
         val actualResult = helper.applyDiscountPromotion(
             shoppingCart = ShoppingCart(
                 items = listOf(
@@ -229,8 +230,8 @@ class ApplyDiscountPromotionHelperTest {
     }
 
     @Test
-    fun `test ApplyDiscountPromotionHelper empty list expected return origin price with product`() {
-        //assign and action
+    fun `test ApplyDiscountPromotionHelper empty list expected return origin price with product`() = runTest {
+    //assign and action
         val actualResult = helper.applyDiscountPromotion(
             shoppingCart = ShoppingCart(
                 items = listOf(
