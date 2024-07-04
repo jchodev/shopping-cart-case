@@ -1,15 +1,20 @@
 ## Notes(Need clarification on this requirement):
-- For "A buy 2 get 1 free promotion" & "A combination purchase deal" ,  is it allow to apply multiple times to a same shopping cart? :
+- Q1: For "A buy 2 get 1 free promotion" & "A combination purchase deal" ,  is it allow to apply multiple times to a same shopping cart? :
+- Q2: How to calculate multiple/combination discount? 
 
 ## Assumptions
-- Added the `repeatable` flag of  `BuyGetFreePromotion` and `CombinationPurchaseDeal` class level
-  - A flag indicating whether this promotion can be applied multiple times to the same shopping cart (default: true).
-  - If set to `false`, the promotion can only be applied once, even if the required categories appear multiple times in the cart.
-  - I believe that these changes will improve the flexibility of these discount promotions
-  - By allowing them to be marked as non-repeatable (repeatable=false), can create more complex discount scenarios.
-    - For example:
-      - A "Buy 2, Get 1 Free" promotion can be set as non-repeatable to ensure it only applies once, even if a customer purchases multiples of 2 qualifying items.
-      - A combination purchase deal with a discounted bundle price can be set as non-repeatable to prevent the discounted bundle from being applied multiple times if the required categories appear several times in the cart.
+- For Q1
+  - Added the `repeatable` flag of  `BuyGetFreePromotion` and `CombinationPurchaseDeal` class level
+    - A flag indicating whether this promotion can be applied multiple times to the same shopping cart (default: true).
+    - If set to `false`, the promotion can only be applied once, even if the required categories appear multiple times in the cart.
+    - I believe that these changes will improve the flexibility of these discount promotions
+    - By allowing them to be marked as non-repeatable (repeatable=false), can create more complex discount scenarios.
+      - For example:
+        - A "Buy 2, Get 1 Free" promotion can be set as non-repeatable to ensure it only applies once, even if a customer purchases multiples of 2 qualifying items.
+        - A combination purchase deal with a discounted bundle price can be set as non-repeatable to prevent the discounted bundle from being applied multiple times if the required categories appear several times in the cart.
+- For Q2
+  - Considers all possible permutations of discount applications to find the most optimal discount combination.
+    - Example: https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=713687900#gid=713687900
 
 ## Suggestions
 1. Add the checking mechanism of `Buy X, Get Y Free` to make sure X is larger than Y
