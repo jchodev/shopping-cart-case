@@ -13,8 +13,9 @@
         - A "Buy 2, Get 1 Free" promotion can be set as non-repeatable to ensure it only applies once, even if a customer purchases multiples of 2 qualifying items.
         - A combination purchase deal with a discounted bundle price can be set as non-repeatable to prevent the discounted bundle from being applied multiple times if the required categories appear several times in the cart.
 - For Q2
-  - Considers all possible permutations of discount applications to find the most optimal discount combination.
+  - Considers all possible sequences of discount applications to find the most optimal discount combination.
     - Example: https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=713687900#gid=713687900
+      ![image](https://github.com/jchodev/shopping-cart-case/assets/100594737/34a1bdde-d4c1-4aa3-b634-0471d3748bdc)
 
 ## Suggestions
 1. Add the checking mechanism of `Buy X, Get Y Free` to make sure X is larger than Y
@@ -31,4 +32,4 @@
 - X% off all {Product} - [https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=0#gid=0](https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=723315935#gid=723315935)
 - MealDeal X Food  + X Drink  + X Fruit - [https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=0#gid=0](https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=293844877#gid=293844877)
 - Support list of discounts/promotions  - [https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=1719329075#gid=1719329075](https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=1719329075#gid=1719329075)
-![image](https://github.com/jchodev/shopping-cart-case/assets/100594737/34a1bdde-d4c1-4aa3-b634-0471d3748bdc)
+
