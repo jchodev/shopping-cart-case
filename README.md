@@ -21,6 +21,9 @@
 2. Add the `reason` or `remark` paramater on `PromotionApplicationResult` when applied promotion/discount failed, that is more easy to track
 3. Add JaCoCo library (https://github.com/jacoco/jacoco) which helps developers to measure the quality and completeness of their tests by providing information on which parts of the codebase are covered by tests and which are not.
 4. Add more test case to cover more different of case
+5. For support `repeatable`  of  `BuyGetFreePromotion` and `CombinationPurchaseDeal`, add paramater `supportCount`
+    - The maximum number of times the promotion can be applied in a single shopping cart. 
+    - for example, for `CombinationPurchaseDeal`: if  `supportCount` is set to 2, it means that a customer can only buy the same deal (e.g., two sets of meat) a maximum of 2 times in a single shopping cart 
 
 ## Covered test case
 - Buy X, Get Free Promotion - [https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=0#gid=0](https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=0#gid=0)
@@ -28,3 +31,4 @@
 - X% off all {Product} - [https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=0#gid=0](https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=723315935#gid=723315935)
 - MealDeal X Food  + X Drink  + X Fruit - [https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=0#gid=0](https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=293844877#gid=293844877)
 - Support list of discounts/promotions  - [https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=1719329075#gid=1719329075](https://docs.google.com/spreadsheets/d/1bBjfQ2zHCByVQeS-EvMYhOvbkSkRGSoieG8a6BGFJ00/edit?gid=1719329075#gid=1719329075)
+![image](https://github.com/jchodev/shopping-cart-case/assets/100594737/34a1bdde-d4c1-4aa3-b634-0471d3748bdc)
