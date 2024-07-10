@@ -1,7 +1,7 @@
 package com.jerry.testcart_technical_test.utils
 
 /**
- * Generates all permutations of the elements in the list.
+ * Generates all permutations / sequences of the elements in the list.
  *
  * This function mixes up the order of items in a list and return all the possible results.
  *

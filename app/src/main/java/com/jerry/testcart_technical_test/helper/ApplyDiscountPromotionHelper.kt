@@ -8,7 +8,7 @@ import com.jerry.testcart_technical_test.utils.permutations
 
 /**
  * This class helps apply discount promotions to a shopping cart and returns the cart with the minimum total amount.
- * It considers all possible permutations of discount applications to find the most optimal discount combination.
+ * It considers all possible sequence of discount applications to find the most optimal discount combination.
  */
 class ApplyDiscountPromotionHelper {
 
@@ -20,12 +20,12 @@ class ApplyDiscountPromotionHelper {
         discountPromotions: List<DiscountPromotion>
     ): ShoppingCart {
 
-        // Generate all permutations of discount promotions
-        val allPermutations  = discountPromotions.permutations()
+        // Generate all sequence of discount promotions
+        val allSequences  = discountPromotions.permutations()
 
-        // Calculate the resulting shopping carts for each permutation
-        val resultCarts = allPermutations.map { permutation ->
-            calculateShoppingCart(shoppingCart, permutation)
+        // Calculate the resulting shopping carts for each permutation / sequence
+        val resultCarts = allSequences.map { sequence ->
+            calculateShoppingCart(shoppingCart, sequence)
         }
 
         // Return the shopping cart with the minimum total amount
